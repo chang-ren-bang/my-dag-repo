@@ -1,4 +1,4 @@
-from airflow.contrib.operators.kubernetes_pod_operator import KubernetesPodOperator
+from airflow.contrib.operators.docker_swarm_operator import DockerSwarmOperator
 from airflow import DAG
 from airflow.utils.dates import days_ago
 
@@ -21,7 +21,7 @@ A generic pipeline tutorial
 
 # Operator source: examples/pipelines/run-generic-pipelines-on-apache-airflow/load_data.ipynb
 
-op_bb889c69_b23a_484e_8fb3_e69309f38a98 = KubernetesPodOperator(
+op_bb889c69_b23a_484e_8fb3_e69309f38a98 = DockerSwarmOperator(
     name="Load_weather_data",
     namespace="default",
     image="docker.io/amancevice/pandas:1.1.1",
@@ -50,7 +50,7 @@ op_bb889c69_b23a_484e_8fb3_e69309f38a98.doc = """
 
 # Operator source: examples/pipelines/run-generic-pipelines-on-apache-airflow/Part 1 - Data Cleaning.ipynb
 
-op_8c96e288_4461_4d7e_8e0d_353c1fdb0c8c = KubernetesPodOperator(
+op_8c96e288_4461_4d7e_8e0d_353c1fdb0c8c = DockerSwarmOperator(
     name="Part_1___Data_Cleaning",
     namespace="default",
     image="docker.io/amancevice/pandas:1.1.1",
@@ -80,7 +80,7 @@ op_8c96e288_4461_4d7e_8e0d_353c1fdb0c8c << op_bb889c69_b23a_484e_8fb3_e69309f38a
 
 # Operator source: examples/pipelines/run-generic-pipelines-on-apache-airflow/Part 2 - Data Analysis.ipynb
 
-op_dcf486ef_2d73_4306_a3ca_af720a1f8eb3 = KubernetesPodOperator(
+op_dcf486ef_2d73_4306_a3ca_af720a1f8eb3 = DockerSwarmOperator(
     name="Part_2___Data_Analysis",
     namespace="default",
     image="docker.io/amancevice/pandas:1.1.1",
@@ -110,7 +110,7 @@ op_dcf486ef_2d73_4306_a3ca_af720a1f8eb3 << op_8c96e288_4461_4d7e_8e0d_353c1fdb0c
 
 # Operator source: examples/pipelines/run-generic-pipelines-on-apache-airflow/Part 3 - Time Series Forecasting.ipynb
 
-op_1e4b1763_337e_4f84_ae9c_a6cc79a1b7eb = KubernetesPodOperator(
+op_1e4b1763_337e_4f84_ae9c_a6cc79a1b7eb = DockerSwarmOperator(
     name="Part_3___Time_Series_Forecasting",
     namespace="default",
     image="docker.io/amancevice/pandas:1.1.1",
