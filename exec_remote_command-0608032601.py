@@ -23,7 +23,7 @@ Created with Elyra 3.8.1 pipeline editor using `exec_remote_command.pipeline`.
 # Operator source: {"catalog_type": "local-directory-catalog", "component_ref": {"base_dir": "/home/jovyan/work/examples/pipelines/run-pipelines-on-apache-airflow/components", "path": "http_operator.py"}}
 op_f7a938d0_62ae_40dd_aee1_82716b2e3337 = SimpleHttpOperator(
     task_id="load_cmd",
-    endpoint="https://api.github.com/repos/elyra-ai/examples/contents/pipelines/run-pipelines-on-apache-airflow/resources/command.txt",
+    endpoint="/repos/elyra-ai/examples/contents/pipelines/run-pipelines-on-apache-airflow/resources/command.txt",
     method="GET",
     data={"ref": "master"},
     headers={"Accept": "Accept:application/vnd.github.v3.raw"},
